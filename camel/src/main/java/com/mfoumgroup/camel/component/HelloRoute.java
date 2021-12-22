@@ -14,7 +14,16 @@ public class HelloRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:greeting").id("greeting")
                 .log(ERROR, "Hello ${body}")
-                .end();
+                .choice()
+                .when().simple("${body} contains 'Team'")
+                     .log(ERROR, "I like working with Teams")
+                .otherwise()
+                     .log(ERROR, "Solo fighter :)")
+                .end()
+                .to("direct:finishGreeting");
+
+        from("direct:finishGreeting")
+                .log(ERROR, "Bye ${body}");
 
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = CamelApplication.class,
-properties = {"${mfoumgroup.camel.hello.enabled}=true"})
+properties = {"${mfoumgroup.camel.hello.enabled}=true"}) //very important
 public class HelloRouteSpringTest {
 
     @Autowired
