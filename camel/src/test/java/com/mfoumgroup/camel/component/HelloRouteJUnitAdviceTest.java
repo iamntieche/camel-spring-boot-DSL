@@ -32,9 +32,7 @@ public class HelloRouteJUnitAdviceTest extends CamelTestSupport {
                 weaveAddLast().to("mock:finishGreeting");
             }
         });
-
         context.start();
-
         MockEndpoint mockEndpoint = getMockEndpoint("mock:finishGreeting");
         mockEndpoint.expectedMessageCount(1);
 

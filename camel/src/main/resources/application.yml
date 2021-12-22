@@ -5,3 +5,5 @@ mfoumgroup:
     camel:
       hello:
         enabled: false
+      file:
+        enabled: false
