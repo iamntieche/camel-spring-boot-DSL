@@ -31,16 +31,16 @@ public class Wiretap extends RouteBuilder {
          */
         fromF(RABBIT_URI, SENDER, SENDER)
                 .unmarshal().json(JsonLibrary.Jackson, TransationDto.class)
-//                .wireTap(AUDIT_TRANSACTION_ROUTE)
+                .wireTap(AUDIT_TRANSACTION_ROUTE)
                 .process(this::enrichTransactionDto)
                 .marshal().json(JsonLibrary.Jackson, TransationDto.class)
                 .toF(RABBIT_URI, RECEIVER,RECEIVER)
                 .log(ERROR, "Money Transferred: ${body}");
 
-     /*   from(AUDIT_TRANSACTION_ROUTE)
+        from(AUDIT_TRANSACTION_ROUTE)
                 .process(this::enrichTransactionDto)
                 .marshal().json(JsonLibrary.Jackson, TransationDto.class)
-                .toF(RABBIT_URI, AUDIT, AUDIT);*/
+                .toF(RABBIT_URI, AUDIT, AUDIT);
     }
 
     private void enrichTransactionDto(Exchange exchange){
