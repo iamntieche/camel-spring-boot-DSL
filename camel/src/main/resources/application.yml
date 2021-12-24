@@ -1,9 +1,19 @@
 server:
   port: 8080
 
+
+camel:
+  component:
+    spring-rabbitmq:
+      auto-declare: true
+
 mfoumgroup:
     camel:
       hello:
         enabled: false
       file:
+        enabled: false
+      rest-metrics:
+        enabled: true
+      wiretap:
         enabled: false

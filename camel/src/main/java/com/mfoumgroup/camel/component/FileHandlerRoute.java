@@ -1,9 +1,12 @@
 package com.mfoumgroup.camel.component;
 
+import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
+
+import java.util.Set;
 
 @Component
 @ConditionalOnProperty(name = "${mfoumgroup.camel.file.enabled}", havingValue = "true")
@@ -30,6 +33,7 @@ public class FileHandlerRoute extends RouteBuilder {
                 .process(Exchange::getMessage)
                 .to("file://" + TO_DIR + "fileName=camel-demo-appends.txt" + APPEND);
     }
+
 
 
 }
