@@ -13,7 +13,7 @@ import java.util.Date;
 import static com.mfoumgroup.camel.config.CamelConfiguration.RABBIT_URI;
 import static org.apache.camel.LoggingLevel.ERROR;
 
-@Component
+//@Component
 //@ConditionalOnProperty(name = "mfoumgroup.camel.wiretap.enabled", havingValue = "true")
 public class Wiretap extends RouteBuilder {
 

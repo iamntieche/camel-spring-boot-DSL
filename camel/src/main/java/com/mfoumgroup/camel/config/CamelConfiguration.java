@@ -4,13 +4,13 @@ import com.rabbitmq.client.ConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class CamelConfiguration {
 
     private static final String EX_DIRECT = "amq.direct";
     public static final String RABBIT_URI = "rabbitmq:" + EX_DIRECT + "?queue=%s&routingKey=%s&autoDelete=false";
 
-   @Bean
+  // @Bean
     public ConnectionFactory connectionFactory(){
         return factory();
     }
