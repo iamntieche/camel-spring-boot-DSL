@@ -17,3 +17,5 @@ mfoumgroup:
         enabled: true
       wiretap:
         enabled: false
+      seda:
+        enabled: false
