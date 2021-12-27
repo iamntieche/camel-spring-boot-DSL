@@ -1,11 +1,14 @@
 server:
   port: 8080
 
-
 camel:
   component:
-    spring-rabbitmq:
-      auto-declare: true
+    servlet:
+      mapping:
+        context-path: /services/*
+  spring-rabbitmq:
+     auto-declare: true
+
 
 mfoumgroup:
     camel:
@@ -14,8 +17,14 @@ mfoumgroup:
       file:
         enabled: false
       rest-metrics:
-        enabled: true
+        enabled: false
       wiretap:
         enabled: false
       seda:
         enabled: false
+      rest:
+        enabled: true
+      rest-dsl:
+        enabled: true
+      weather:
+        enabled: true

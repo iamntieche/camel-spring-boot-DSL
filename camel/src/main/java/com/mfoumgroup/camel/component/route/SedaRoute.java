@@ -1,11 +1,10 @@
-package com.mfoumgroup.camel.component;
+package com.mfoumgroup.camel.component.route;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.support.DefaultMessage;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -13,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-@Component
+//@Component
 //@ConditionalOnProperty(name = "com.mfoumgroup.camel.seda.enabled", havingValue = "true")
 public class SedaRoute extends RouteBuilder {
 

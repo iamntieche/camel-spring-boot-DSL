@@ -1,6 +1,5 @@
-package com.mfoumgroup.camel.component;
+package com.mfoumgroup.camel.component.route;
 
-import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;

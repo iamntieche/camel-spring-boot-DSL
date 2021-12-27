@@ -1,5 +1,6 @@
 package com.mfoumgroup.camel.component;
 
+import com.mfoumgroup.camel.component.route.HelloRoute;
 import org.apache.camel.RoutesBuilder;
 import org.apache.camel.builder.AdviceWithRouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
