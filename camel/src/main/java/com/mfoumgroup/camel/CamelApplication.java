@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.mfoumgroup.camel"})
+//@ComponentScan(basePackages = {"com.mfoumgroup.camel"})
 public class CamelApplication {
 
 	public static void main(String[] args) {

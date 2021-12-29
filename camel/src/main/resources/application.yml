@@ -9,6 +9,17 @@ camel:
   spring-rabbitmq:
      auto-declare: true
 
+metrics: 0 */1 * * * * # seconds minutes hours days months years
+#expose actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - prometheus
+
 
 mfoumgroup:
     camel:
