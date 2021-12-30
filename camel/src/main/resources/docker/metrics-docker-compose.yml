@@ -2,12 +2,12 @@ version: "3.2"
 
 networks:
   metrics:
-    driver: metrics
+    driver: bridge
 
 services:
   mfoumgroup-camel:
+    image: mfoumgroup/camel:0.0.1
     container_name: mfoumgroup-camel
-    image: mfoumgroup/camel
     ports:
       - "8080:8080"
     networks:
@@ -19,12 +19,12 @@ services:
     ports:
       - "9090:9090"
     command:
-      - --config.file=/C/Users/issofa.ntiechmfoum/java_project/camel-course/prometheus
+      - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
       - --web.console.libraries=/usr/share/prometheus/console_libraries
       - --web.console.templates=/usr/share/prometheus/consoles
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    volumes: #send your prometheus file config
+        - /c/Users/issofa.ntiechmfoum/java_project/camel-course/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
       - metrics
 

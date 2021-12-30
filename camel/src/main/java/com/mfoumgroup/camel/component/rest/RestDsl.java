@@ -17,7 +17,7 @@ import java.util.Objects;
 import static com.mfoumgroup.camel.config.CamelConfiguration.RABBIT_URI;
 import static org.apache.camel.Exchange.HTTP_RESPONSE_CODE;
 
-@Component
+//@Component
 public class RestDsl extends RouteBuilder {
 
     private final WeatherDataProvider weatherDataProvider;
